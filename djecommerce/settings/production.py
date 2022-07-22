@@ -1,7 +1,7 @@
 from .base import *
 
 DEBUG = config('DEBUG', cast=bool)
-ALLOWED_HOSTS = ['ip-address', 'www.your-website.com']
+ALLOWED_HOSTS = ['188.16', '*.coveredscreen.com']
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -13,11 +13,11 @@ AUTH_PASSWORD_VALIDATORS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
+        'NAME': config('POSTGRES_DB'),
+        'USER': config('POSTGRES_USER'),
+        'PASSWORD': config('POSTGRES_PASSWORD'),
         'HOST': config('DB_HOST'),
-        'PORT': ''
+        'PORT': config('DB_PORT')
     }
 }
 
