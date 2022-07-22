@@ -17,14 +17,13 @@ services:
     build: .
     volumes:
      - .:/app/
-     - ./cscreen/staticfiles:/app/cscreen/staticfiles/
-     - ./cscreen/static:/app/cscreen/static/
+     - ./djecommerce/staticfiles:/app/djecommerce/staticfiles/
+     - ./djecommerce/static:/app/djecommerce/static/
     command: > 
         sh -c "
-              python manage.py collectstatic --noinput  --settings=cscreen.settings.production &&
-              python manage.py migrate --settings=cscreen.settings.production &&
-              python manage.py initsu --settings=cscreen.settings.production &&
-              python manage.py runserver 0.0.0.0:8500 --settings=cscreen.settings.production"
+              python manage.py collectstatic --noinput  --settings=djecommerce.settings.production &&
+              python manage.py migrate --settings=djecommerce.settings.production &&
+              python manage.py runserver 0.0.0.0:8500 --settings=djecommerce.settings.production"
     
     ports:
         - "8500:8500"    
