@@ -21,9 +21,9 @@ services:
      - ./djecommerce/static:/app/djecommerce/static/
     command: > 
         sh -c "
-              python manage.py collectstatic --noinput  --settings=djecommerce.settings.production &&
-              python manage.py migrate --settings=djecommerce.settings.production &&
-              python manage.py runserver 0.0.0.0:8500 --settings=djecommerce.settings.production"
+              python manage.py collectstatic --noinput  --settings=djecommerce.settings.development &&
+              python manage.py migrate --settings=djecommerce.settings.development &&
+              python manage.py runserver 0.0.0.0:8500 --settings=djecommerce.settings.development"
     
     ports:
         - "8500:8500"    
