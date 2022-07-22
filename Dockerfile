@@ -8,7 +8,7 @@ ADD . /app
 
 RUN apt-get update && apt-get -y install libpq-dev gcc
 
-RUN pip install -r re.txt
+RUN pip install -r requirements.txt
 
 
 
